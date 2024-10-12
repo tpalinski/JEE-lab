@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "dd697470-5de6-46bb-988b-55b21998f167",
+		"name": "Java lab",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26927856"
+	},
+	"item": [
+		{
+			"name": "api/users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/users",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users/<id>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/users/{{user}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"users",
+						"{{user}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users/<id>",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/users/{{user}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"users",
+						"{{user}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\": \"jkowal\",\n    \"name\": \"Jan Kowalski\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/users",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users/<id>",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Zmienione imie\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/users/{{user}}",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"users",
+						"{{user}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users/<id>/avatar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/users/{{user}}/avatar",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"users",
+						"{{user}}",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users/<id>/avatar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}api/users/{{user}}/avatar",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"users",
+						"{{user}}",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users/<id>/avatar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "somebytes",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/users/{{user}}/avatar",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"users",
+						"{{user}}",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api/users/<id>/avatar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "somebytes",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}api/users/{{user}}/avatar",
+					"host": [
+						"{{base_url}}api"
+					],
+					"path": [
+						"users",
+						"{{user}}",
+						"avatar"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:9080/warhammer-rest/",
+			"type": "string"
+		},
+		{
+			"key": "user",
+			"value": "f87f6768-87b1-4146-9113-a52e8d8abba1",
+			"type": "string"
+		}
+	]
+}
