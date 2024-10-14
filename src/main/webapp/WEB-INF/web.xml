@@ -4,21 +4,30 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0"
          metadata-complete="false">
+  <context-param>
+    <param-name> avatarStoragePath </param-name>
+    <param-value> /home/student/188764/JEE-lab/data/avatars </param-value>
+  </context-param>
 
-    <listener>
-        <listener-class>com.example.warhammer.config.listener.CreateAppConfig</listener-class>
-    </listener>
+  <context-param>
+    <param-name> initialUserRating </param-name>
+    <param-value> 10 </param-value>
+  </context-param>
 
-    <listener>
-        <listener-class>com.example.warhammer.config.listener.CreateStorage</listener-class>
-    </listener>
+  <listener>
+      <listener-class>com.example.warhammer.config.listener.CreateAppConfig</listener-class>
+  </listener>
 
-    <listener>
-        <listener-class>com.example.warhammer.config.listener.CreateServices</listener-class>
-    </listener>
+  <listener>
+      <listener-class>com.example.warhammer.config.listener.CreateStorage</listener-class>
+  </listener>
 
-    <listener>
-        <listener-class>com.example.warhammer.config.listener.CreateControllers</listener-class>
-    </listener>
+  <listener>
+      <listener-class>com.example.warhammer.config.listener.CreateServices</listener-class>
+  </listener>
+
+  <listener>
+      <listener-class>com.example.warhammer.config.listener.CreateControllers</listener-class>
+  </listener>
 
 </web-app>
