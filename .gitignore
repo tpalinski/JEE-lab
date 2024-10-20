@@ -38,3 +38,4 @@ java/build/**
 
 # My own stuff
 data/avatars/*
+src/main/resources/.env

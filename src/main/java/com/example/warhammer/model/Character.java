@@ -1,6 +1,7 @@
 package com.example.warhammer.model;
 
 import java.util.Date;
+import java.util.UUID;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -21,6 +22,6 @@ public class Character extends Model {
   private String name;
   private Date buyDate;
   private int points;
-  private Army army;
-  private User user;
+  private UUID armyId;
+  private UUID userId;
 }

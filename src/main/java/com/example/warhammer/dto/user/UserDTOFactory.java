@@ -5,6 +5,11 @@ import com.example.warhammer.dto.user.function.UpdateRequestToUserFunction;
 import com.example.warhammer.dto.user.function.UserToResponseFunction;
 import com.example.warhammer.dto.user.function.UsersToResponseFunction;
 
+import jakarta.enterprise.context.RequestScoped;
+import lombok.NoArgsConstructor;
+
+@RequestScoped
+@NoArgsConstructor(force = true)
 public class UserDTOFactory {
 
   public UsersToResponseFunction usersToResponse() {

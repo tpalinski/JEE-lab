@@ -4,45 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.example.warhammer.model.User;
 import com.example.warhammer.repository.exception.EntityExistsException;
 import com.example.warhammer.repository.exception.NonexistentEntityException;
 
+import jakarta.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
 public class UserMemoryRepository implements UserRepository {
 
   private List<User> usersInMem;
 
   public UserMemoryRepository() {
-    usersInMem = new ArrayList<User>();
-    usersInMem.add(User.builder()
-      .id(UUID.fromString("f87f6768-87b1-4146-9113-a52e8d8abba1"))
-      .login("superuser2137")
-      .name("Pierwszy user")
-      .rating(439)
-      .build()
-    );
-    usersInMem.add(User.builder()
-      .id(UUID.fromString("f87f6768-87b1-4146-9113-a52e8d8abba2"))
-      .login("worseuser")
-      .name("Drugi user")
-      .rating(10)
-      .build()
-    );
-    usersInMem.add(User.builder()
-      .id(UUID.fromString("f87f6768-87b1-4146-9113-a52e8d8abba3"))
-      .login("kharn")
-      .name("Not A Khornate Cultist")
-      .rating(666)
-      .build()
-    );
-    usersInMem.add(User.builder()
-      .id(UUID.fromString("f87f6768-87b1-4146-9113-a52e8d8abba4"))
-      .login("last user")
-      .name("Ostatni user")
-      .rating(200)
-      .build()
-    );
+    usersInMem = new CopyOnWriteArrayList<User>();
   }
 
 

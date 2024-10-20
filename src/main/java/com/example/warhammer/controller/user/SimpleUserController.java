@@ -19,13 +19,24 @@ import com.example.warhammer.repository.exception.NonexistentEntityException;
 import com.example.warhammer.service.user.UserService;
 import com.example.warhammer.storage.exception.StorageException;
 
-import lombok.AllArgsConstructor;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
+@NoArgsConstructor(force = true)
+@RequestScoped
 public class SimpleUserController implements UserController {
+
   private UserService userService;
   private UserDTOFactory userDTOFactory;
   private AppConfig config;
+
+  @Inject
+  public SimpleUserController(UserService userService, UserDTOFactory factory, AppConfig config) {
+    this.userService = userService;
+    this.userDTOFactory = factory;
+    this.config = config;
+  }
 
   @Override
   public GetUsersResponse getUsers() {

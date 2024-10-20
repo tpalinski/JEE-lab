@@ -10,14 +10,20 @@ import java.util.UUID;
 import com.example.warhammer.config.AppConfig;
 import com.example.warhammer.storage.exception.StorageException;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.inject.Inject;
+import lombok.NoArgsConstructor;
 
-@AllArgsConstructor
-@Builder
+@NoArgsConstructor
+@RequestScoped
 public class LocalAvatarStorage implements AvatarStorage {
 
   private AppConfig config;
+
+  @Inject
+  public LocalAvatarStorage(AppConfig config) {
+    this.config = config;
+  }
 
   private final String FILE_EXTENSION = ".png";
 

@@ -1,5 +1,6 @@
 package com.example.warhammer.servlet;
 
+import jakarta.inject.Inject;
 import jakarta.json.bind.Jsonb;
 import jakarta.json.bind.JsonbBuilder;
 import jakarta.servlet.ServletException;
@@ -29,7 +30,12 @@ import com.example.warhammer.dto.user.UpdateUserRequest;
 @MultipartConfig(maxFileSize = 200 * 1024)
 public class ApiServlet extends HttpServlet {
 
-    private UserController userController;
+    private final UserController userController;
+
+    @Inject
+    public ApiServlet(UserController userController) {
+      this.userController = userController;
+    }
 
 
     /**
@@ -73,11 +79,6 @@ public class ApiServlet extends HttpServlet {
         }
     }
 
-    @Override
-    public void init() throws ServletException {
-        super.init();
-        userController = (UserController) getServletContext().getAttribute("userController");
-    }
 
     @SuppressWarnings("RedundantThrows")
     @Override

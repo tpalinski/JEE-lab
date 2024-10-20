@@ -1,5 +1,8 @@
 package com.example.warhammer.model;
 
+import java.util.List;
+import java.util.UUID;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -18,6 +21,7 @@ import lombok.experimental.SuperBuilder;
 public class Army extends Model {
   private String name;
   private String description;
+  private List<UUID> characters;
   private Affiliation affiliation;
 
   public enum Affiliation {
